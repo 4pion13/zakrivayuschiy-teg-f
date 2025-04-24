@@ -404,8 +404,8 @@ body:has(.save-modal[open]) {
   filter: blur(10px);
 }
 
-.invert {
-  filter: invert(30%);
+.combo-filter {
+  filter: invert(30%) hue-rotate(90deg) blur(2px);
 }
 /* Адаптив */
 
