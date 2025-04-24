@@ -24,7 +24,7 @@ button {
 @supports (font-variation-settings: normal) {
   .page {
     font-family: var(--main-font), sans-serif;
-    font-variation-settings: "wght" var(--main-text-weight);
+    font-variation-settings: "wght" 400;
   }
 }
 
@@ -130,7 +130,7 @@ button {
 
 .card__content-text {
   font-size: var(--card-text-size);
-  font-variation-settings: "wght" var(--main-text-weight);
+  font-variation-settings: "wght" 400;
   line-height: 117%;
 }
 
