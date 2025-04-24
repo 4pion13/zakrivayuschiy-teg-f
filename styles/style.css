@@ -380,6 +380,33 @@ body:has(.save-modal[open]) {
   text-transform: uppercase;
 }
 
+.sepia {
+  filter: sepia(100%);
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.brightness {
+  filter: brightness(130%);
+}
+
+.saturate {
+  filter: saturate(1000%);
+}
+
+.hue-rotate {
+  filter: hue-rotate(90deg);
+}
+
+.blur {
+  filter: blur(10px);
+}
+
+.invert {
+  filter: invert(30%);
+}
 /* Адаптив */
 
 @media (width <= 375px) {
