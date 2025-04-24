@@ -29,7 +29,6 @@ button {
 }
 
 .header {
-  /* padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem); */
   max-width: 700px;
   margin: auto;
   background: #fff;
@@ -87,7 +86,7 @@ button {
   width: 100%;
   padding: 5px 10px;
   font-size: var(--card-title-size);
-  font-variation-settings: "wght" var(--title-text-weight);
+  font-variation-settings: "wght" 700;
 }
 
 .card__image-container {
