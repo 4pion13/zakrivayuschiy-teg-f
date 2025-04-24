@@ -1,32 +1,39 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-    --main-font: 'Inter';
-    --accent-font: 'Press Start 2P';
-    --main-text-weight: 400;
-    --title-text-weight: 700;
-    --card-title-size: 18px;
-    --card-text-size: 18px;
-    --bg: repeating-linear-gradient(
-        to right,
-        #d3d3d3,
-        #d3d3d3 2px,
-        transparent 2px,
-        transparent 4px
-      ),
-      repeating-linear-gradient(
-        to top,
-        #d3d3d3,
-        #d3d3d3 2px,
-        transparent 2px,
-        transparent 4px
-      ),
-      linear-gradient(to bottom, #e7e7e7, #1a1a1a);
-    --main-color: #000;
-    --button-color: #fff;
-    --main-bg-color: #fff;
-    --contour-color: #000;
-    --main-body-color: #000;
-    --core-color: #fff;
-    --sparks-color: #f00;
-
+  --main-font: "Inter";
+  --accent-font: "Press Start 2P";
+  --label-color: #000;
+  --label-shadow-color: #fff;
+  --label-stroke-color: #fff;
+  --main-text-weight: 400;
+  --title-text-weight: 700;
+  --card-title-size: 18px;
+  --card-text-size: 18px;
+  --bg: repeating-linear-gradient(
+      to right,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      to top,
+      #d3d3d3,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+  --main-color: #000;
+  --button-color: #fff;
+  --modal-color: #fff;
+  --main-bg-color: #fff;
+  --contour-color: #000;
+  --main-body-color: #000;
+  --core-color: #000;
+  --sparks-color: #f00;
+  --heart-active-color: #ff0000;
+  --core-click-color: #ff0000;
+  --core-main-body-color: #ff0000;
+  --core-contour-color: #ff0000;
 }

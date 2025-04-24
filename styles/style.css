@@ -10,7 +10,6 @@
 
 */
 
-
 button {
   cursor: pointer;
 }
@@ -24,15 +23,10 @@ button {
 
 @supports (font-variation-settings: normal) {
   .page {
-      font-family: var(--main-font), sans-serif;
-      font-variation-settings: 'wght' var(--main-text-weight);
+    font-family: var(--main-font), sans-serif;
+    font-variation-settings: "wght" var(--main-text-weight);
   }
 }
-
-
-
-
-
 
 .header {
   /* padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem); */
@@ -40,7 +34,8 @@ button {
   margin: auto;
   background: #fff;
   border: 2px solid #000;
-  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) 0 clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) 0
+    clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
   margin-top: 100px;
   margin-bottom: 100px;
 }
@@ -51,8 +46,6 @@ button {
   justify-content: center;
   align-items: center;
   gap: 20px;
-
-
 }
 
 .header__logo-title {
@@ -72,7 +65,6 @@ button {
   min-block-size: 100dvb;
 }
 
-
 .main {
   display: flex;
   flex-direction: column;
@@ -81,6 +73,7 @@ button {
   gap: 50px;
   max-width: 700px;
   margin: 0 auto;
+  margin-bottom: 100px;
 }
 
 .card {
@@ -98,7 +91,7 @@ button {
   width: 100%;
   padding: 5px 10px;
   font-size: var(--card-title-size);
-  font-variation-settings: 'wght' var(--title-text-weight);
+  font-variation-settings: "wght" var(--title-text-weight);
 }
 
 .card__image-container {
@@ -120,16 +113,15 @@ button {
   font-size: 14px;
   mix-blend-mode: hard-light;
   opacity: 0.5;
-  color: #000;
-  text-shadow: -1px -1px 0px #fff,
-  1px 1px 0px #fff;
-
+  color: var(--label-color);
+  text-shadow: -1px -1px 0px var(--label-shadow-color),
+    1px 1px 0px var(--label-shadow-color);
 }
 
-@supports (-webkit-text-stroke: 0.7px #FFFFFF ) {
+@supports (-webkit-text-stroke: 0.7px var(--label-stroke-color)) {
   .card__image-container-label {
     text-shadow: 0 0 0;
-    -webkit-text-stroke: 0.7px #FFFFFF;
+    -webkit-text-stroke: 0.7px var(--label-stroke-color);
   }
 }
 
@@ -143,7 +135,7 @@ button {
 
 .card__content-text {
   font-size: var(--card-text-size);
-  font-variation-settings: 'wght' var(--main-text-weight);
+  font-variation-settings: "wght" var(--main-text-weight);
   line-height: 117%;
 }
 
@@ -153,9 +145,8 @@ button {
   justify-content: end;
   align-items: center;
   padding: 0px 25px 25px 0px;
-  gap: 12px;
+  gap: 5px;
 }
-
 
 /* Кнопка лайка (сердце) */
 .card__icon-button {
@@ -167,10 +158,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 38px;
-  height: 38px;
   transition: 0.3s ease;
-  border: 2px solid transparent
+  border: 2px solid transparent;
 }
 
 .card__icon-button:focus {
@@ -181,13 +170,86 @@ button {
   border-color: var(--main-color);
 }
 
-.like-icon:hover .core{
-  fill: var(--main-body-color);
-  transition: fill 0.3s linear ;
+.like-icon .sparks {
+  opacity: 0;
 }
-.card__icon-button:hover .like-icon .main-body {
-  fill:  var(--main-body-color);
+
+.like-icon .contour {
+  transition: fill 0.1s linear 0s;
+}
+
+.like-icon .main-body {
+  fill: transparent;
   transition: fill 0.3s linear 0.05s;
+}
+.like-icon:hover .main-body {
+  fill: var(--main-body-color);
+  transition: fill 0.3s ease 0s;
+}
+
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s ease 0s;
+}
+
+.like-icon:hover .core {
+  fill: var(--main-body-color);
+  transition: fill 0.3s ease 0.03s;
+}
+
+.like-icon:active {
+  .core,
+  .main-body {
+    fill: var(--heart-active-color);
+  }
+}
+
+.like-icon.is-liked .core {
+  fill: var(--core-click-color);
+  transition: fill 0.3s ease 0s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--core-main-body-color);
+  transition: fill 0.3s ease 0s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--core-contour-color);
+  transition: fill 0.3s ease 0.06s;
+}
+
+.is-liked .heart {
+  transform-origin: center;
+  animation: scaling 0.3s ease-in 0.1s forwards;
+}
+
+.is-liked .sparks {
+  animation: sparks-flash 0.3s ease-in 0.3s forwards;
+}
+
+@keyframes scaling {
+  0% {
+    transform: scale(1);
+  }
+  99.9% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes sparks-flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Кнопка лайка */
@@ -206,9 +268,6 @@ button {
   box-shadow: 2px 2px var(--main-color);
   transition: 0.3s ease;
 }
-
-
-
 
 /* Модфикатор анимации кнопки при наведении */
 
@@ -243,18 +302,15 @@ button {
   mix-blend-mode: difference;
 }
 
-
-
-
 /* Копка "Сохранить на память" */
 
 .save-button {
   padding: 0;
   border: none;
   font: inherit;
-  color: var(--button-color);;
-  background-color: #fff;
-  border: 2px solid #000;
+  color: var(--button-color);
+  background-color: var(--button-color);
+  border: 2px solid var(--main-color);
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 90%;
@@ -262,10 +318,7 @@ button {
   align-items: center;
   gap: 8px;
   padding: 15px 19px;
-
-
 }
-
 
 /* Модальное окно */
 .save-modal[open] {
@@ -275,14 +328,14 @@ button {
   justify-content: center;
   position: fixed;
   inset: 0 0 0 0;
-  background-color: #fff;
-  border: 2px solid #000;
+  background-color: var(--modal-color);
+  border: 2px solid var(--main-color);
   padding: 30px;
   max-width: 353px;
   overflow: hidden;
 }
 
-.save-modal__title{
+.save-modal__title {
   display: flex;
   gap: 20px;
   font-family: var(--accent-font), sans-serif;
@@ -292,11 +345,9 @@ button {
   flex-shrink: 1;
 }
 
-
 .save-modal__content {
   padding: 0;
   font-family: var(--accent-font), sans-serif;
-  
 }
 
 .save-modal__button {
@@ -304,8 +355,8 @@ button {
   border: none;
   font: inherit;
   color: inherit;
-  background-color: #fff;
-  border: 2px solid #000;
+  background-color: var(--button-color);
+  border: 2px solid var(--main-color);
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 90%;
@@ -316,13 +367,12 @@ button {
 
 body:has(.save-modal[open]) {
   overflow: hidden;
-} 
+}
 
 .save-modal[open]::backdrop {
   opacity: 0.75;
   background: #000;
 }
-
 
 /* Иконки дискеты */
 .icon {
@@ -330,10 +380,9 @@ body:has(.save-modal[open]) {
 }
 
 .icon-big {
-  /* width: 85px; */
   width: 39px;
+  flex-shrink: 0;
 }
-
 
 /* Модификаторы */
 .uppercase {
@@ -366,6 +415,4 @@ body:has(.save-modal[open]) {
     max-width: 341px;
     padding: 30px 42px;
   }
-
-  
 }
