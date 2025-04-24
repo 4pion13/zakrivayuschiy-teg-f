@@ -60,10 +60,6 @@ button {
   text-align: center;
 }
 
-.page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
-}
 
 .main {
   display: flex;
@@ -348,7 +344,6 @@ button {
 }
 
 .save-modal__button {
-  border: none;
   font: inherit;
   color: inherit;
   background-color: var(--button-color);
