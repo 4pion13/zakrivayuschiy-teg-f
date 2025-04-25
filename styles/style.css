@@ -15,18 +15,14 @@ button {
 }
 .page {
   font-family: var(--main-font), sans-serif;
-  font-weight: var(--main-text-weight);
+  font-variation-settings: 'wght' var(--main-card-font-weight, 400);
   background-image: var(--bg);
   background-size: cover;
   background-attachment: fixed;
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
 }
 
-@supports (font-variation-settings: normal) {
-  .page {
-    font-family: var(--main-font), sans-serif;
-    font-variation-settings: "wght" 400;
-  }
-}
 
 .header {
   max-width: 700px;
@@ -86,7 +82,7 @@ button {
   width: 100%;
   padding: 5px 10px;
   font-size: var(--card-title-size);
-  font-variation-settings: "wght" 700;
+  font-variation-settings: 'wght' var(--card-title-font-weight, 700);
 }
 
 .card__image-container {
@@ -130,7 +126,7 @@ button {
 
 .card__content-text {
   font-size: var(--card-text-size);
-  font-variation-settings: "wght" 400;
+  font-variation-settings: "wght" var(--main-text-weight);
   line-height: 117%;
 }
 
