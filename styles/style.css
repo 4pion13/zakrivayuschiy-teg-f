@@ -308,11 +308,6 @@ button {
   text-transform: uppercase;
 }
 
-.save-modal__content {
-  padding: 0;
-  font-family: var(--accent-font), sans-serif;
-}
-
 .save-modal__button {
   text-transform: uppercase;
   padding: 12.5px 0;
