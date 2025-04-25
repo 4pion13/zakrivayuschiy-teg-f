@@ -2,9 +2,9 @@
 :root {
   --main-font: "Inter";
   --accent-font: "Press Start 2P";
-  --label-color: #000;
-  --label-shadow-color: #fff;
-  --label-stroke-color: #fff;
+  --span-color: #000;
+  --span-shadow-color: #fff;
+  --span-stroke-color: #fff;
   --main-text-weight: 400;
   --title-text-weight: 700;
   --card-title-size: 18px;
