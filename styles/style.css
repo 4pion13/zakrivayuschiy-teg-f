@@ -391,4 +391,9 @@ body:has(.save-modal[open]) {
     max-width: 341px;
     padding: 30px 40px;
   }
+
+  .card__image-container-span {
+    right: 12px;
+    top: 25px;
+  }
 }
