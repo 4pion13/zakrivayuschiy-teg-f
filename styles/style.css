@@ -81,18 +81,22 @@ button {
   padding: 5px 10px;
   font-size: var(--card-title-size);
   font-variation-settings: "wght" var(--card-title-font-weight, 700);
+  border-bottom: 2px solid var(--main-color);
 }
 
 .card__image-container {
   position: relative;
+  width: 100%;
+  max-height: 696px;
 }
 
 .card__image-container-image {
+  display: block;
   object-fit: cover;
   object-position: center;
+  aspect-ratio: 1/1;
   width: 100%;
-  border-top: 2px solid var(--main-color);
-  border-bottom: 2px solid var(--main-color);
+  height: 100%;
 }
 
 .card__image-container-span {
@@ -122,6 +126,7 @@ button {
   flex-direction: column;
   justify-content: start;
   gap: 27px;
+  border-top: 2px solid var(--main-color);
 }
 
 .card__content-text {
@@ -378,10 +383,10 @@ body:has(.save-modal[open]) {
   }
 
   .header__logo-title {
-    text-shadow: 2px 1px 3px #000;
+    text-shadow: 0px 2px 5px #000;
   }
   .header__logo-subtitle {
-    text-shadow: 2px 1px 3px #000;
+    text-shadow: 0px 2px 5px #000;
   }
   .main {
     margin-bottom: 103px;
@@ -394,6 +399,6 @@ body:has(.save-modal[open]) {
 
   .card__image-container-span {
     right: 12px;
-    top: 25px;
+    top: 23px;
   }
 }
